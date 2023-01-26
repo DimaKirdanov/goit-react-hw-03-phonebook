@@ -6,15 +6,18 @@ import Filter from './Filter/Filter';
 import styles from './App.module.css';
 class App extends Component {
   state = {
-    contacts: [
-      { id: shortid.generate(), name: 'Rosie Simpson', number: '459-12-56' },
-      { id: shortid.generate(), name: 'Hermione Kline', number: '443-89-12' },
-      { id: shortid.generate(), name: 'Eden Clements', number: '645-17-79' },
-      { id: shortid.generate(), name: 'Annie Copeland', number: '227-91-26' },
-    ],
+    contacts: [],
     filter: '',
   };
+  componentDidMount() {
+    const contacts = JSON.parse(localStorage.getItem('contacts'));
+    this.setState({ contacts })
+  }
 
+  componentDidUpdate() {
+    const { contacts } = this.state;
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+  }
   addContacts = ({ name, number }) => {
     const contact = {
       id: shortid.generate(),
