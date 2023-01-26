@@ -10,7 +10,14 @@
   align-items: center;
 }
 .text {
+  justify-content: space-between;
   margin-right: 15px;
+}
+.container {
+  width: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 .btnDelete {
   height: 20px;

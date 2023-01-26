@@ -7,7 +7,10 @@ const ContactList = ({ filter, onDeleteContact }) => {
       {filter.map(({ id, name, number }) => (
         <li className={styles.item} key={id}>
           <p className={styles.text}>
-            {name}: {number}
+            <div className={styles.container}>
+              <div>{name}:</div>
+              <div>{number}</div>
+            </div>
           </p>
           <button
             className={styles.btnDelete}
