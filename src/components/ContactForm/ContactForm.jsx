@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import styles from './ContactForm.module.css';
-class ContactForm extends Component {
+class ContactForm extends PureComponent {
   state = {
     name: '',
     number: '',
